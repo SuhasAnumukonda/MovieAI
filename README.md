@@ -9,8 +9,12 @@ In addition, you need to get API keys from omdbapi.com, and from tmdb. Once you 
 
 After that, open movieReviewML, and run the code to train the model. You should get a test accuracy of around 0.87. You only need to run this file once, because there is a line of code that saves the model to the folder.
 
-From there, you can open movieReviewFlask, and run that file. once you see "Running on http://127.0.0.1:5000" (or something similar) in the terminal, open a browser and run enter "localhost:5000" into the search bar. From there, the website should load. If there is an issue, that most likely means there is an issue with your flask file accessing your JS, CSS and HTML files
+From there, you can open movieReviewFlask, and run that file. once you see "Running on http://127.0.0.1:5000" (or something similar) in the terminal, open a browser and run enter "localhost:5000" (or localhost:"last four digits") into the search bar. From there, the website should load. If there is an issue, that most likely means there is an issue with your flask file accessing your JS, CSS and HTML files
 
 Now, search for movies. You will see basic information such as the actors, writers, and plot summary. Furthermore, there will be rating and popularity information. In addition, there will be review information, where the AI that you trained in the movieReviewML file will run analysis on movie reviews, such as sentiment analysis, frequency analysis, and bigram analysis, displaying the data on graphs. Finally, there will be an additional information section, where it will display keywords associated with the movie, and similar movies
 
 Keep in mind, the movie data is from OMDB, and the rating, review, and additional information is from TMDB. For some movies, such as old, unpopular, or international films, there may be limited or even no information. 
+
+Feel free to experiment with the movieReviewML file, but every time you make changes to that file, you need to retrain the model to implement those changes onto the website.
+
+If you have trouble running the code, or have any questions, feel free to contact me. Have fun!
