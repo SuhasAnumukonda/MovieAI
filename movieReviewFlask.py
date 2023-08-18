@@ -13,10 +13,9 @@ import string
 
 
 
-url2 = "https://api.themoviedb.org/3/authentication"
+url2 = #add your own url here
 headers = {
-    "accept": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjM4ZDNlOWNmNjAzZTljYzY4ZTM2YWI3ODg0OWRhYSIsInN1YiI6IjY0ODIzZGQ5ZTI3MjYwMDBlOGJmNzk3MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lW2CItRpoOW6BlwgnWw-Bqq_qXAkhhgai5NqgGz1voM"
+    #add your own headers here
 }
 response = requests.get(url2, headers=headers)
 
@@ -49,8 +48,7 @@ def process():
     data = str(request.get_json())
     url = "https://api.themoviedb.org/3/search/movie?query=" + data
     headers = {
-    "accept": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjM4ZDNlOWNmNjAzZTljYzY4ZTM2YWI3ODg0OWRhYSIsInN1YiI6IjY0ODIzZGQ5ZTI3MjYwMDBlOGJmNzk3MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lW2CItRpoOW6BlwgnWw-Bqq_qXAkhhgai5NqgGz1voM"
+    #add your own headers here
     }
 
     response = requests.get(url, headers=headers).json()
@@ -70,18 +68,15 @@ def process():
 
     url = "https://api.themoviedb.org/3/movie/" + id + "/reviews?language=en-US&page=1"
     headers = {
-        "accept": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjM4ZDNlOWNmNjAzZTljYzY4ZTM2YWI3ODg0OWRhYSIsInN1YiI6IjY0ODIzZGQ5ZTI3MjYwMDBlOGJmNzk3MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lW2CItRpoOW6BlwgnWw-Bqq_qXAkhhgai5NqgGz1voM"
-        }
-    
+        #add your own headers here
+    }
     reviews = requests.get(url, headers=headers).json()
     totalPages = reviews['total_pages']
     numberofReviews = reviews['total_results']
 
     url = "https://api.themoviedb.org/3/movie/" + id + "/recommendations?language=en-US&page=1"
     headers = {
-        "accept": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjM4ZDNlOWNmNjAzZTljYzY4ZTM2YWI3ODg0OWRhYSIsInN1YiI6IjY0ODIzZGQ5ZTI3MjYwMDBlOGJmNzk3MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lW2CItRpoOW6BlwgnWw-Bqq_qXAkhhgai5NqgGz1voM"
+        #add your own headers here
     }
     response = requests.get(url, headers=headers).json()
     responseRec = response['results']
@@ -89,8 +84,7 @@ def process():
 
     url = "https://api.themoviedb.org/3/movie/" + id +"/keywords"
     headers = {
-        "accept": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjM4ZDNlOWNmNjAzZTljYzY4ZTM2YWI3ODg0OWRhYSIsInN1YiI6IjY0ODIzZGQ5ZTI3MjYwMDBlOGJmNzk3MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lW2CItRpoOW6BlwgnWw-Bqq_qXAkhhgai5NqgGz1voM"
+        #add your own headers here
     }
     response = requests.get(url, headers=headers).json()
     responseKey = response['keywords']
@@ -134,8 +128,7 @@ def process():
     for pageNumber in range(1, totalPagesforLoop):
         url = "https://api.themoviedb.org/3/movie/" + id + "/reviews?language=en-US&page=" + str(pageNumber)
         headers = {
-        "accept": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjM4ZDNlOWNmNjAzZTljYzY4ZTM2YWI3ODg0OWRhYSIsInN1YiI6IjY0ODIzZGQ5ZTI3MjYwMDBlOGJmNzk3MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lW2CItRpoOW6BlwgnWw-Bqq_qXAkhhgai5NqgGz1voM"
+           #add your own headers here
         }
         reviews = requests.get(url, headers=headers).json()
         reviewsData = reviews['results']
